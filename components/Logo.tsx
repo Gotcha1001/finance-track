@@ -1,9 +1,10 @@
 import { PiggyBank } from "lucide-react";
 import React from "react";
+import Link from "next/link"; // Import Link from next/link
 
 function Logo() {
   return (
-    <a href="/" className="flex items-center gap-2  ">
+    <Link href="/" className="flex items-center gap-2">
       {/* Add circular image here */}
       <img
         src="/Logo.png" // Replace with your image path
@@ -14,17 +15,17 @@ function Logo() {
       <p className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-3xl font-bold leading-tight tracking-tighter text-transparent">
         BudgetTracker
       </p>
-    </a>
+    </Link>
   );
 }
 
 export function LogoMobile() {
   return (
-    <a href="/" className="flex items-center gap-2">
+    <Link href="/" className="flex items-center gap-2">
       <p className="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-3xl font-bold leading-tight tracking-tighter text-transparent">
         BudgetTracker
       </p>
-    </a>
+    </Link>
   );
 }
 

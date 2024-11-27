@@ -163,10 +163,11 @@ function CreateCategoryDialog({ type, successCallback, trigger }: Props) {
                           variant={"outline"}
                           className="h-[100px] w-full"
                         >
-                          {form.watch("icon") ? (
+                          {field.value ? (
                             <div className="flex flex-col items-center gap-2">
                               <span className="text-5xl" role="img">
-                                {field.value}
+                                {field.value}{" "}
+                                {/* Ensure field.value is used here */}
                               </span>
                               <p className="text-xs text-muted-foreground">
                                 Click to change
@@ -187,7 +188,7 @@ function CreateCategoryDialog({ type, successCallback, trigger }: Props) {
                           data={data}
                           theme={theme.resolvedTheme}
                           onEmojiSelect={(emoji: { native: string }) => {
-                            field.onChange(emoji.native);
+                            field.onChange(emoji.native); // Use field.onChange here
                           }}
                         />
                       </PopoverContent>

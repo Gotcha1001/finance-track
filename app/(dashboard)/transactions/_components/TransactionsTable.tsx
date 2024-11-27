@@ -45,7 +45,7 @@ interface Props {
   from: Date;
   to: Date;
 }
-const emptyData: any[] = [];
+const emptyData: TransactionHistoryRow[] = [];
 
 type TransactionHistoryRow = GetTransactionHistoryResponseType[0];
 
@@ -146,9 +146,15 @@ function TransactionsTable({ from, to }: Props) {
         )}&to=${DateToUTCDate(to)}`
       ).then((res) => res.json()),
   });
-
   const handleExportCSV = (data: any[]) => {
-    const csv = generateCsv(csvConfig)(data);
+    const formattedData = data.map((row) => ({
+      ...row,
+      createdAt: row.createdAt.toISOString(), // Convert Date to string
+      updatedAt: row.updatedAt.toISOString(), // Convert Date to string
+      date: row.date.toISOString(), // Convert Date to string
+    }));
+
+    const csv = generateCsv(csvConfig)(formattedData);
     download(csvConfig)(csv);
   };
 
