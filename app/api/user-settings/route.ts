@@ -3,7 +3,7 @@ import { currentUser } from "@clerk/nextjs/server";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
-export async function GET(request: Request) {
+export async function GET() {
   //1. get the user first
   const user = await currentUser();
 
@@ -19,7 +19,7 @@ export async function GET(request: Request) {
     },
   });
 
-  //4. cover situations where their arent intial settings, first time user,create them
+  //4. cover situations where their arent intial settings, first time user, create them
   if (!userSettings) {
     userSettings = await prisma.userSettings.create({
       data: {
@@ -30,7 +30,6 @@ export async function GET(request: Request) {
   }
 
   // Revalidate the home page that uses the user currency
-
   revalidatePath("/");
 
   return Response.json(userSettings);
