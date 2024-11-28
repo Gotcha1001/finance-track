@@ -100,17 +100,19 @@ function CreateCategoryDialog({ type, successCallback, trigger }: Props) {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        {trigger ? (
-          trigger
-        ) : (
-          <Button
-            variant={"ghost"}
-            className="flex border-separate items-center justify-start rounded-none border-b px-3 py-3 text-muted-foreground"
-          >
-            <PlusSquare className="mr-2 h-4 w-4" />
-            Create New
-          </Button>
-        )}
+        <div>
+          {trigger ? (
+            trigger
+          ) : (
+            <Button
+              variant={"ghost"}
+              className="flex border-separate items-center justify-start rounded-none border-b px-3 py-3 text-muted-foreground"
+            >
+              <PlusSquare className="mr-2 h-4 w-4" />
+              Create New
+            </Button>
+          )}
+        </div>
       </DialogTrigger>
       <DialogContent aria-describedby="dialog-description">
         <p id="dialog-description">
@@ -159,29 +161,31 @@ function CreateCategoryDialog({ type, successCallback, trigger }: Props) {
                   <FormControl>
                     <Popover>
                       <PopoverTrigger asChild>
-                        <Button
-                          variant={"outline"}
-                          className="h-[100px] w-full"
-                        >
-                          {field.value ? (
-                            <div className="flex flex-col items-center gap-2">
-                              <span className="text-5xl" role="img">
-                                {field.value}{" "}
-                                {/* Ensure field.value is used here */}
-                              </span>
-                              <p className="text-xs text-muted-foreground">
-                                Click to change
-                              </p>
-                            </div>
-                          ) : (
-                            <div className="flex flex-col items-center gap-2">
-                              <CircleOff className="h-[48px] w-[48px]" />
-                              <p className="text-xs text-muted-foreground">
-                                Click to select
-                              </p>
-                            </div>
-                          )}
-                        </Button>
+                        <div>
+                          <Button
+                            variant={"outline"}
+                            className="h-[100px] w-full"
+                          >
+                            {field.value ? (
+                              <div className="flex flex-col items-center gap-2">
+                                <span className="text-5xl" role="img">
+                                  {field.value}{" "}
+                                  {/* Ensure field.value is used here */}
+                                </span>
+                                <p className="text-xs text-muted-foreground">
+                                  Click to change
+                                </p>
+                              </div>
+                            ) : (
+                              <div className="flex flex-col items-center gap-2">
+                                <CircleOff className="h-[48px] w-[48px]" />
+                                <p className="text-xs text-muted-foreground">
+                                  Click to select
+                                </p>
+                              </div>
+                            )}
+                          </Button>
+                        </div>
                       </PopoverTrigger>
                       <PopoverContent className="w-full">
                         <Picker
@@ -205,15 +209,17 @@ function CreateCategoryDialog({ type, successCallback, trigger }: Props) {
 
         <DialogFooter>
           <DialogClose asChild>
-            <Button
-              type="button"
-              variant={"secondary"}
-              onClick={() => {
-                form.reset();
-              }}
-            >
-              Cancel
-            </Button>
+            <div>
+              <Button
+                type="button"
+                variant={"secondary"}
+                onClick={() => {
+                  form.reset();
+                }}
+              >
+                Cancel
+              </Button>
+            </div>
           </DialogClose>
           <Button onClick={form.handleSubmit(onSubmit)} disabled={isPending}>
             {!isPending && "Create"}

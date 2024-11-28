@@ -44,11 +44,11 @@ import { toast } from "sonner";
 import { DateToUTCDate } from "@/lib/helpers";
 
 interface Props {
-  trigger: ReactNode;
+  children: ReactNode;
   type: TransactionType;
 }
 
-function CreateTransactionDialog({ trigger, type }: Props) {
+function CreateTransactionDialog({ children, type }: Props) {
   const form = useForm<CreateTransactionSchemaType>({
     resolver: zodResolver(CreateTransactionSchema),
     defaultValues: {
@@ -105,7 +105,7 @@ function CreateTransactionDialog({ trigger, type }: Props) {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>{trigger}</DialogTrigger>
+      <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>
@@ -130,8 +130,7 @@ function CreateTransactionDialog({ trigger, type }: Props) {
                 <FormItem>
                   <FormLabel>Description</FormLabel>
                   <FormControl>
-                    <Input {...field} />{" "}
-                    {/* Use field to connect input value */}
+                    <Input {...field} />
                   </FormControl>
                   <FormDescription>
                     Transaction Description (optional)
@@ -146,8 +145,7 @@ function CreateTransactionDialog({ trigger, type }: Props) {
                 <FormItem>
                   <FormLabel>Amount</FormLabel>
                   <FormControl>
-                    <Input {...field} type="number" />{" "}
-                    {/* Use field to connect input value */}
+                    <Input {...field} type="number" />
                   </FormControl>
                   <FormDescription>
                     Transaction amount (required)
@@ -166,7 +164,7 @@ function CreateTransactionDialog({ trigger, type }: Props) {
                       type={type}
                       onChange={(value: string) => {
                         form.setValue("category", value);
-                        field.onChange(value); // Make sure to use field for change handling
+                        field.onChange(value);
                       }}
                     />
                   </FormControl>
@@ -207,7 +205,7 @@ function CreateTransactionDialog({ trigger, type }: Props) {
                         selected={field.value}
                         onSelect={(value) => {
                           if (!value) return;
-                          field.onChange(value); // Use field.onChange to update the value
+                          field.onChange(value);
                         }}
                         initialFocus
                       />

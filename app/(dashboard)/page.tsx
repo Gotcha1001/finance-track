@@ -35,29 +35,23 @@ async function page() {
               className="ml-4 h-14 w-14 rounded-full"
             />
           </div>
-          <div className="flex items-center gap-3 ">
-            <CreateTransactionDialog
-              trigger={
-                <Button
-                  variant={"outline"}
-                  className="border-emerald-500 bg-emerald-950 text-white hover:bg-emerald-700 hover:text-white"
-                >
-                  New Income
-                </Button>
-              }
-              type="income"
-            />
-            <CreateTransactionDialog
-              trigger={
-                <Button
-                  variant={"outline"}
-                  className="border-rose-500 bg-rose-950 text-white hover:bg-rose-700 hover:text-white"
-                >
-                  New Expense
-                </Button>
-              }
-              type="expense"
-            />
+          <div className="flex items-center gap-3">
+            <CreateTransactionDialog type="income">
+              <Button
+                variant={"outline"}
+                className="border-emerald-500 bg-emerald-950 text-white hover:bg-emerald-700 hover:text-white"
+              >
+                New Income
+              </Button>
+            </CreateTransactionDialog>
+            <CreateTransactionDialog type="expense">
+              <Button
+                variant={"outline"}
+                className="border-rose-500 bg-rose-950 text-white hover:bg-rose-700 hover:text-white"
+              >
+                New Expense
+              </Button>
+            </CreateTransactionDialog>
           </div>
         </div>
       </div>

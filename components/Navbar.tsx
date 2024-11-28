@@ -41,9 +41,11 @@ function MobileNavbar() {
       <nav className="container flex items-center justify-between px-8 ">
         <Sheet open={isOpen} onOpenChange={setIsopen}>
           <SheetTrigger asChild>
-            <Button variant={"ghost"} size={"icon"}>
-              <Menu />
-            </Button>
+            <div>
+              <Button variant={"ghost"} size={"icon"}>
+                <Menu />
+              </Button>
+            </div>
           </SheetTrigger>
           <SheetContent className="w-[400px] sm:w-[540px]" side="left">
             <Logo />

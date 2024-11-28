@@ -102,13 +102,15 @@ export function CurrencyComboBox() {
     <SkeletonWrapper isLoading={userSettings.isFetching}>
       <Drawer open={open} onOpenChange={setOpen}>
         <DrawerTrigger asChild>
-          <Button
-            variant="outline"
-            className="w-full justify-start"
-            disabled={mutation.isPending}
-          >
-            {selectedOption ? <>{selectedOption.label}</> : <>Set Currency</>}
-          </Button>
+          <div>
+            <Button
+              variant="outline"
+              className="w-full justify-start"
+              disabled={mutation.isPending}
+            >
+              {selectedOption ? <>{selectedOption.label}</> : <>Set Currency</>}
+            </Button>
+          </div>
         </DrawerTrigger>
         <DrawerContent>
           <div className="mt-4 border-t">
