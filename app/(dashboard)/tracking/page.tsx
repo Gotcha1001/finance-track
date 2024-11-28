@@ -35,21 +35,22 @@ export default function TrackingPage() {
       </div>
 
       {/* Testimonies Section */}
-      <div className="mt-8  p-4 rounded-lg">
+      <div className="mt-8 p-4 rounded-lg">
         <h2 className="text-2xl font-semibold mb-4">What Others Are Saying</h2>
-        <blockquote className="italic p-4   mb-4 gradient-background2 ">
-          "Tracking my expenses has helped me save more and spend smarter. I now
-          understand where my money goes, which has made budgeting so much
-          easier!" – Alex R.
+        <blockquote className="italic p-4 mb-4 gradient-background2">
+          &quot;Tracking my expenses has helped me save more and spend smarter.
+          I now understand where my money goes, which has made budgeting so much
+          easier!&quot; &ndash; Alex R.
         </blockquote>
-        <blockquote className="italic p-4  bg-gray-100 mb-4 gradient-background2">
-          "Using a budgeting app to track my daily spending has been a game
-          changer. I never thought I could save up for a vacation so quickly!" –
-          Maria L.
+        <blockquote className="italic p-4 bg-gray-100 mb-4 gradient-background2">
+          &quot;Using a budgeting app to track my daily spending has been a game
+          changer. I never thought I could save up for a vacation so
+          quickly!&quot; &ndash; Maria L.
         </blockquote>
         <blockquote className="italic p-4 bg-gray-100 gradient-background2">
-          "I've been more mindful about my purchases ever since I started
-          recording them. It's empowering to see my progress." – James W.
+          &quot;I&apos;ve been more mindful about my purchases ever since I
+          started recording them. It&apos;s empowering to see my progress.&quot;
+          &ndash; James W.
         </blockquote>
       </div>
 
