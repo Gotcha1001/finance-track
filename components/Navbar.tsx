@@ -71,7 +71,7 @@ function MobileNavbar() {
         <div className="flex h-[80px] min-h[60px] items-center gap-x-4 ">
           <LogoMobile />
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 ml-3">
           <ThemeSwitcherBtn />
           <UserButton afterSignOutUrl="/sign-in" />
         </div>

@@ -57,7 +57,7 @@ export default function TrackingPage() {
       {/* Image Section with Framer Motion */}
       <div className="mt-12 text-center">
         <motion.img
-          src="https://images.pexels.com/photos/210990/pexels-photo-210990.jpeg?auto=compress&cs=tinysrgb&w=800" // Replace with your image URL
+          src="https://images.pexels.com/photos/271168/pexels-photo-271168.jpeg?auto=compress&cs=tinysrgb&w=800" // Replace with your image URL
           alt="Tracking Finances"
           className="w-full max-w-3xl mx-auto rounded-lg shadow-lg"
           whileHover={{ scale: 1.05 }} // Scale up on hover
