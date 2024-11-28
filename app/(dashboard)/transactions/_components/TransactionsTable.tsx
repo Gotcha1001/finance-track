@@ -147,12 +147,23 @@ function TransactionsTable({ from, to }: Props) {
       ).then((res) => res.json()),
   });
   const handleExportCSV = (data: any[]) => {
-    const formattedData = data.map((row) => ({
-      ...row,
-      createdAt: row.createdAt.toISOString(), // Convert Date to string
-      updatedAt: row.updatedAt.toISOString(), // Convert Date to string
-      date: row.date.toISOString(), // Convert Date to string
-    }));
+    const formattedData = data.map((row) => {
+      return {
+        ...row,
+        createdAt:
+          row.createdAt && row.createdAt instanceof Date
+            ? row.createdAt.toISOString()
+            : undefined,
+        updatedAt:
+          row.updatedAt && row.updatedAt instanceof Date
+            ? row.updatedAt.toISOString()
+            : undefined,
+        date:
+          row.date && row.date instanceof Date
+            ? row.date.toISOString()
+            : undefined,
+      };
+    });
 
     const csv = generateCsv(csvConfig)(formattedData);
     download(csvConfig)(csv);
