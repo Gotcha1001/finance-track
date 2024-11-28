@@ -56,24 +56,26 @@ export default function Page() {
         <div className="space-y-4">
           <div className="p-4 border border-gray-300 rounded-lg">
             <p className="italic">
-              "This app has completely transformed how I manage my budget. I was
-              able to save $2,000 last year by tracking my daily expenses and
-              cutting out unnecessary costs. I’m now on track to save for my
-              education next year!" – <strong>Emma L.</strong>
+              &quot;This app has completely transformed how I manage my budget.
+              I was able to save $2,000 last year by tracking my daily expenses
+              and cutting out unnecessary costs. I&rsquo;m now on track to save
+              for my education next year!&quot; &ndash; <strong>Emma L.</strong>
             </p>
           </div>
           <div className="p-4 border border-gray-300 rounded-lg">
             <p className="italic">
-              "Thanks to this tool, I've reduced my monthly spending by 15%. The
-              intuitive calculations and alerts keep me accountable, and I'm
-              finally saving for my dream vacation!" – <strong>James R.</strong>
+              &quot;Thanks to this tool, I&apos;ve reduced my monthly spending
+              by 15%. The intuitive calculations and alerts keep me accountable,
+              and I&apos;m finally saving for my dream vacation!&quot; &ndash;{" "}
+              <strong>James R.</strong>
             </p>
           </div>
           <div className="p-4 border border-gray-300 rounded-lg">
             <p className="italic">
-              "With this app, I learned how to cut costs without feeling
-              deprived. I used the savings to invest in a side project that's
-              helping me secure a better future." – <strong>Alice C.</strong>
+              &quot;With this app, I learned how to cut costs without feeling
+              deprived. I used the savings to invest in a side project
+              that&apos;s helping me secure a better future.&quot; &ndash;{" "}
+              <strong>Alice C.</strong>
             </p>
           </div>
         </div>
